@@ -8,7 +8,16 @@ html {
   font-family: 'Open Sans', sans-serif;
 }
 
-.container {
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  padding: 1rem;
+}
+
+/* .container {
   max-width: 20rem;
   margin-right: auto;
   margin-left: auto;
@@ -26,4 +35,5 @@ header {
   height: 10rem;
   background-image: url(./img/rocket.svg);
   background-size: contain;
-}
+} */
+

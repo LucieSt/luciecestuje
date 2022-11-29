@@ -1,3 +1,4 @@
 import './style.css';
+import { App } from './App/index.js';
 
-console.log('funguju!');
+document.body.append(App());
