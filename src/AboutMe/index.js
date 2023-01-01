@@ -3,7 +3,8 @@ export const AboutMe = () => {
     element.classList.add('about', 'page');
 
     element.innerHTML = `
-        <p>O mne</p>
+        <p>O mne
+        <br/>taky muze byt par fotek Zdeny a nas jak s ni cestujeme a fakt kratky popis</p>
     `
     
     return element

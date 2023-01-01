@@ -7,9 +7,8 @@ export const Navigation = () => {
     element.innerHTML = `
     <nav>
         <a href="/">luciecestuje</a>
-        <a href="/cestovani">cestovani</a>
+        <a href="/cesty">cesty</a>
         <a href="/autor">o mne</a>
-        <a href="/kontakt">kontakt</a>
     </nav>
     `
 
