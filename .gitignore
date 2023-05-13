@@ -1,66 +1,23 @@
-# Ignore the package-lock.json to prevent conflicts when collaborating
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-package-lock.json
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
 
-# Logs
-logs
-*.log
-npm-debug.log*
+# testing
+/coverage
 
-# Diagnostic reports (https://nodejs.org/api/report.html)
-report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+# production
+/build
 
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# Dependency directories
-node_modules/
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Microbundle cache
-.rpt2_cache/
-.rts2_cache_cjs/
-.rts2_cache_es/
-.rts2_cache_umd/
-
-# Optional REPL history
-.node_repl_history
-
-# dotenv environment variables file
-.env
-.env.test
-
-# Generated output
-dist
-
-# VS Code settings
-.vscode
-
-# Mac OS General
-
+# misc
 .DS_Store
-.AppleDouble
-.LSOverride
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# MacOS Thumbnails
-._*
-
-# Windows thumbnail cache files
-Thumbs.db
-Thumbs.db:encryptable
-ehthumbs.db
-ehthumbs_vista.db
-
-# Windows Dump file
-*.stackdump
-
-# Windows folder config file
-[Dd]esktop.ini
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
