@@ -1,13 +1,12 @@
-import './App.css';
-import Databases from './components/databases';
+import "./App.css";
+import CloudinarySetup from "./components/cloudinarySetup";
 
 function App() {
   return (
     <div className="App">
       <h1>lucie cestuje</h1>
 
-      <Databases />
-
+      <CloudinarySetup />
     </div>
   );
 }
