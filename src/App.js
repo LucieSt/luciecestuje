@@ -1,9 +1,9 @@
 import "./App.css";
-import CloudinarySetup from "./components/cloudinarySetup";
-import FirebaseSetup from "./components/firebaseSetup";
-import Home from "./components/home";
+// import CloudinarySetup from "./components/cloudinarySetup";
+// import FirebaseSetup from "./components/firebaseSetup";
 import Navigation from "./components/navigation";
 import Footer from "./components/footer";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <FirebaseSetup /> */}
 
       <Navigation />
-      <Home />
+      <Outlet />
       <Footer />
     </div>
   );
