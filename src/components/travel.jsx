@@ -41,11 +41,13 @@ const cesty = [
 const Travel = () => {
   const { travelId } = useParams();
   const travelData = cesty.find((cesta) => cesta.id.toString() === travelId);
+  const { title, text, year } = travelData;
 
   return (
-    <div>
-      <h2>travel</h2>
-      <h3>{travelData.title}</h3>
+    <div className="travel">
+      <h3>{title}</h3>
+      <h4>{year}</h4>
+      <p>{text}</p>
     </div>
   );
 };

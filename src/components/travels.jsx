@@ -1,3 +1,4 @@
+import "./../styles/travels.sass";
 import { Link } from "react-router-dom";
 
 const cesty = [
@@ -40,16 +41,18 @@ const cesty = [
 
 const Travels = () => {
   return (
-    <div>
+    <div className="travels">
       <h2>cesty</h2>
-      {cesty.map((cesta) => {
-        const url = `/cesty/${cesta.id}`;
-        return (
-          <Link key={cesta.id} to={url}>
-            {cesta.title}
-          </Link>
-        );
-      })}
+      <div className="travels-list">
+        {cesty.map((cesta) => {
+          const url = `/cesty/${cesta.id}`;
+          return (
+            <Link key={cesta.id} to={url}>
+              {cesta.title}
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 };

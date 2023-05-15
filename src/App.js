@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.sass";
 // import CloudinarySetup from "./components/cloudinarySetup";
 // import FirebaseSetup from "./components/firebaseSetup";
 import Navigation from "./components/navigation";
@@ -10,9 +10,10 @@ function App() {
     <div className="App">
       {/* <CloudinarySetup />
       <FirebaseSetup /> */}
-
       <Navigation />
-      <Outlet />
+      <div className="wrap-container">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );

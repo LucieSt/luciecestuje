@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
+import "./../styles/navigation.sass";
 
 const Navigation = () => {
   return (
-    <div>
-      <span>
+    <div className="nav-container">
+      <span className="nav-logo">
         <Link to="/">luciecestuje</Link>
       </span>
-      <nav>
+      <nav className="nav-links">
         <Link to="/cesty">cesty</Link>
-        <span> | </span>
-        <Link to="/onas">o nas</Link>
+        <Link to="/onas" className="nav-about">
+          o nas
+        </Link>
       </nav>
     </div>
   );
