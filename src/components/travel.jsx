@@ -23,7 +23,7 @@ const Travel = () => {
     displayData();
   }, []);
 
-  const { title, year, text } = selectedTravelData || {};
+  const { title, year, text, images } = selectedTravelData || {};
 
   return (
     <div className="travel">
@@ -32,6 +32,9 @@ const Travel = () => {
           <h3>{title}</h3>
           <h4>{year}</h4>
           <p>{text}</p>
+          {images.map((image) => {
+            return <img key={image} src={image} width="300px"></img>;
+          })}
         </>
       )}
     </div>

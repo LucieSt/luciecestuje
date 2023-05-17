@@ -4,12 +4,14 @@ class CloudinaryUploadWidget extends Component {
   componentDidMount() {
     var myWidget = window.cloudinary.createUploadWidget(
       {
-        cloudName: "dnwbnhdof",
-        uploadPreset: "o4x5c6kq",
+        cloudName: process.env.REACT_APP_CLOUDINARY_CLOUD_NAME,
+        uploadPreset: process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET,
       },
       (error, result) => {
         if (!error && result && result.event === "success") {
           console.log("Done! Here is the image info: ", result.info);
+          const imageInfo = result.info;
+          this.props.onImageUpload(imageInfo);
         }
       }
     );
