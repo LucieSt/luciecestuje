@@ -24,14 +24,23 @@ const Travels = () => {
 
   return (
     <div className="travels">
-      <h2>cesty</h2>
       <div className="travels-list">
         {travelData &&
           travelData.map((cesta) => {
             const url = `/cesty/${cesta.title}`;
             return (
               <Link key={cesta.id} to={url}>
-                {cesta.title}
+                <div className="travels-link-container">
+                  <div className="travels-img">
+                    <img
+                      src={cesta.main_image}
+                      alt="image"
+                      width="100%"
+                      height="auto"
+                    />
+                    <h3>{cesta.title}</h3>
+                  </div>
+                </div>
               </Link>
             );
           })}

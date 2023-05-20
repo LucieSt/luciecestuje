@@ -21,7 +21,7 @@ const CloudinarySetup = () => {
   return (
     <>
       <h2>cloudinary</h2>
-      <AdvancedImage cldImg={myImage} />
+      {/* <AdvancedImage cldImg={myImage} /> */}
       <div>
         <h2>Upload Widget</h2>
         <CloudinaryUploadWidget onImageUpload={handleImageUpload} />
