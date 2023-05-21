@@ -8,6 +8,8 @@ import About from "./components/about";
 import Travels from "./components/travels";
 import Home from "./components/home";
 import Travel from "./components/travel";
+import Signin from "./components/signIn";
+import Login from "./components/login";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
         element: <Travel />,
       },
     ],
+  },
+  {
+    path: "/signin",
+    element: <Signin />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 
