@@ -39,18 +39,18 @@ const AppContainer = () => {
           element: <Travel />,
         },
         {
+          path: "/signin",
+          element: <Signin />,
+        },
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        {
           path: "/novacesta",
           element: signedIn ? <UploadForm /> : null,
         },
       ],
-    },
-    {
-      path: "/signin",
-      element: <Signin />,
-    },
-    {
-      path: "/login",
-      element: <Login />,
     },
   ];
 

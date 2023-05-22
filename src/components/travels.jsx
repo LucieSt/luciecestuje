@@ -3,13 +3,11 @@ import { Link } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { db } from "./../firebase";
 import { collection, getDocs } from "firebase/firestore";
-import { onAuthStateChanged } from "firebase/auth";
-import { getAuth } from "firebase/auth";
 import { AuthContext } from "../authContext";
 
 const Travels = () => {
   const [travelData, setTravelData] = useState([]);
-  const { signedIn, setSignedIn } = useContext(AuthContext);
+  const { signedIn } = useContext(AuthContext);
 
   console.log(signedIn);
 
@@ -26,19 +24,6 @@ const Travels = () => {
 
   useEffect(() => {
     displayData();
-    const auth = getAuth();
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        // const uid = user.uid;
-        setSignedIn(true);
-      } else {
-        // User is signed out
-        setSignedIn(false);
-        console.log("user is logged out");
-      }
-    });
   }, []);
 
   return (
