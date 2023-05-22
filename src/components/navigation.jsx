@@ -28,17 +28,17 @@ const Navigation = () => {
         <Link to="/">luciecestuje</Link>
       </span>
       <nav className="nav-links">
-        {signedIn && (
-          <span className="nav-signout" onClick={handleLogout}>
-            odhlasit
-          </span>
-        )}
         <Link to="/cesty" className="nav-travels">
           cesty
         </Link>
         <Link to="/onas" className="nav-about">
           o nas
         </Link>
+        {signedIn && (
+          <span className="nav-signout" onClick={handleLogout}>
+            odhlasit
+          </span>
+        )}
       </nav>
     </div>
   );

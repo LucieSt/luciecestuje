@@ -9,8 +9,6 @@ const Travels = () => {
   const [travelData, setTravelData] = useState([]);
   const { signedIn } = useContext(AuthContext);
 
-  console.log(signedIn);
-
   const displayData = async () => {
     await getDocs(collection(db, "travels")).then((querySnapshot) => {
       const newData = querySnapshot.docs.map((doc) => ({
@@ -18,7 +16,6 @@ const Travels = () => {
         id: doc.id,
       }));
       setTravelData(newData);
-      console.log(travelData, newData);
     });
   };
 

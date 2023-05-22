@@ -16,10 +16,10 @@ export const AuthProvider = ({ children }) => {
       } else {
         setSignedIn(false);
       }
-      setLoading(false); // Mark the loading as false once the state is determined
+      setLoading(false);
     });
 
-    return () => unsubscribe(); // Cleanup the listener on unmount
+    return () => unsubscribe();
   }, []);
 
   return (
