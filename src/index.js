@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.sass";
 import App from "./App";
@@ -11,24 +11,11 @@ import Travel from "./components/travel";
 import Signin from "./components/signIn";
 import Login from "./components/login";
 import UploadForm from "./components/uploadForm";
-import { onAuthStateChanged } from "firebase/auth";
-import { getAuth } from "firebase/auth";
-
-const auth = getAuth();
+import { AuthContext } from "./authContext";
+import { AuthProvider } from "./authContext";
 
 const AppContainer = () => {
-  const [signedIn, setSignedIn] = useState(false);
-
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setSignedIn(true);
-      } else {
-        setSignedIn(false);
-        console.log("user is logged out");
-      }
-    });
-  }, []);
+  const { signedIn } = useContext(AuthContext);
 
   const routes = [
     {
@@ -73,7 +60,11 @@ const AppContainer = () => {
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppContainer />);
+root.render(
+  <AuthProvider>
+    <AppContainer />
+  </AuthProvider>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
