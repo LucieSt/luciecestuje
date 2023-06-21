@@ -1,3 +1,5 @@
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "./../firebase";
 import { useState } from "react";
 import CloudinaryUploadWidget from "../CloudinaryUploadWidget";
 import "./../styles/uploadForm.sass";
@@ -7,9 +9,21 @@ const UploadForm = () => {
   const [description, setDescription] = useState("");
   const [images, setImages] = useState([]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(title, description, images);
+
+    try {
+      const docRef = await addDoc(collection(db, "travels"), {
+        title: title,
+        text: description,
+        images: images,
+        main_image: images[0],
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
   };
 
   const handleImageUpload = (imageInfo) => {
@@ -29,11 +43,11 @@ const UploadForm = () => {
         </div>
         <div className="form-item">
           <label>popis</label>
-          <input
+          <textarea
             type="text"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-          />
+          ></textarea>
         </div>
         <div className="form-item">
           <label>nahrat fotky</label>
@@ -45,6 +59,10 @@ const UploadForm = () => {
           </button>
         </div>
       </form>
+
+      <div>
+        <h2>preview:</h2>
+      </div>
     </div>
   );
 };
