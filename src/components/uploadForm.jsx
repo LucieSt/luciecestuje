@@ -2,6 +2,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from "./../firebase";
 import { useState } from "react";
 import CloudinaryUploadWidget from "../CloudinaryUploadWidget";
+import ReactMarkdown from "react-markdown";
 import "./../styles/uploadForm.sass";
 
 const UploadForm = () => {
@@ -26,6 +27,15 @@ const UploadForm = () => {
     }
   };
 
+  const handleClick = (e) => {
+    const unwantedImage = e.target.offsetParent.firstChild.currentSrc;
+    setImages(
+      images.filter((image) => {
+        return image !== unwantedImage;
+      })
+    );
+  };
+
   const handleImageUpload = (imageInfo) => {
     setImages((currentImages) => [...currentImages, imageInfo.secure_url]);
   };
@@ -44,14 +54,25 @@ const UploadForm = () => {
         <div className="form-item">
           <label>popis</label>
           <textarea
-            type="text"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-          ></textarea>
+            placeholder=""
+          />
         </div>
+        <ReactMarkdown>{description}</ReactMarkdown>
         <div className="form-item">
           <label>nahrat fotky</label>
           <CloudinaryUploadWidget onImageUpload={handleImageUpload} />
+        </div>
+        <div>
+          {images.map((image) => {
+            return (
+              <div className="image-container" key={image}>
+                <img src={image} width="300px"></img>
+                <div onClick={handleClick}>X</div>
+              </div>
+            );
+          })}
         </div>
         <div className="form-item">
           <button onClick={handleSubmit} className="form-btn">
@@ -59,10 +80,6 @@ const UploadForm = () => {
           </button>
         </div>
       </form>
-
-      <div>
-        <h2>preview:</h2>
-      </div>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { db } from "./../firebase";
 import { collection, getDocs } from "firebase/firestore";
+import ReactMarkdown from "react-markdown";
 
 const Travel = () => {
   const [selectedTravelData, setSelectedTravelData] = useState(null);
@@ -32,6 +33,7 @@ const Travel = () => {
           <h3>{title}</h3>
           <h4>{year}</h4>
           <p>{text}</p>
+          <ReactMarkdown>{text}</ReactMarkdown>
           {images.map((image) => {
             return <img key={image} src={image} width="300px"></img>;
           })}
