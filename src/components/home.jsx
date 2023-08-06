@@ -12,7 +12,6 @@ const Home = () => {
   return (
     <div>
       <h2>home</h2>
-      <p>something</p>
     </div>
   );
 };
