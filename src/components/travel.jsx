@@ -1,8 +1,10 @@
+import "./../styles/travel.sass";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { db } from "./../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { Gallery } from "react-grid-gallery";
+import { Photos } from "./lightboxSetup";
 
 const Travel = () => {
   const [selectedTravelData, setSelectedTravelData] = useState(null);
@@ -76,6 +78,7 @@ const Travel = () => {
             );
           })}
           <Gallery images={galleryImages} />
+          <Photos />
         </>
       )}
     </div>
