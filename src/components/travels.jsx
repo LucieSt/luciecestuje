@@ -32,7 +32,7 @@ const Travels = () => {
               <div className="travels-img">
                 <img
                   src="https://res.cloudinary.com/dnwbnhdof/image/upload/v1684698763/xhyozoujfrrnzisptc6v.jpg"
-                  alt="image"
+                  alt="new"
                   width="100%"
                   height="auto"
                 />
@@ -43,6 +43,7 @@ const Travels = () => {
         )}
         {travelData &&
           travelData.map((cesta) => {
+            console.log(cesta);
             const url = `/cesty/${cesta.title}`;
             return (
               <Link key={cesta.id} to={url}>
@@ -50,7 +51,7 @@ const Travels = () => {
                   <div className="travels-img">
                     <img
                       src={cesta.main_image}
-                      alt="image"
+                      alt={cesta.title}
                       width="100%"
                       height="auto"
                     />
