@@ -30,28 +30,29 @@ const Navigation = () => {
   };
 
   return (
-    <div className="nav-section">
-      <header className={`nav-wrapper ${scroll ? "sticky" : ""}`}>
-        <div className="nav-container">
-          <span className="nav-logo">
-            <Link to="/">luciecestuje</Link>
-          </span>
-          <nav className="nav-links">
-            <Link to="/cesty" className="nav-travels">
-              cesty
-            </Link>
-            <Link to="/onas" className="nav-about">
-              o nas
-            </Link>
-            {signedIn && (
-              <span className="nav-signout" onClick={handleLogout}>
-                odhlasit
-              </span>
-            )}
-          </nav>
-        </div>
-      </header>
-    </div>
+    <header className={`nav-wrapper ${scroll ? "sticky" : ""}`}>
+      <div className="nav-container">
+        <span className="nav-logo">
+          <Link to="/">luciecestuje</Link>
+        </span>
+        <nav className="nav-links">
+          <Link to="/cesty" className="nav-travels">
+            CESTY
+          </Link>
+          <Link to="/onas" className="nav-about">
+            O NAS
+          </Link>
+          <Link to="/" className="nav-home">
+            DOMU
+          </Link>
+          {signedIn && (
+            <span className="nav-signout" onClick={handleLogout}>
+              ODHLASIT
+            </span>
+          )}
+        </nav>
+      </div>
+    </header>
   );
 };
 
