@@ -26,13 +26,16 @@ const Travels = () => {
   return (
     <div className="travels">
       <div className="travels-banner banner"></div>
+
+      <p>blabla fhbjdsjh<br />bsdjsdfh sf <br />hjksfghdfndf   fdf gfh jkfh sfj k f<br />sjh fkj  dgdgg df d gdfgsfbksfb f<br />bfsd bfsfb<br />s bfsd f</p>
+
       <div className="travels-list">
         {signedIn && (
           <Link to="/novacesta">
             <div className="travels-link-container">
               <div className="travels-img">
                 <img
-                  src="https://res.cloudinary.com/dnwbnhdof/image/upload/v1684698763/xhyozoujfrrnzisptc6v.jpg"
+                  src="https://res.cloudinary.com/dnwbnhdof/image/upload/c_scale,w_auto/dpr_auto/v1684698763/xhyozoujfrrnzisptc6v.jpg"
                   alt="new"
                   width="100%"
                   height="auto"
