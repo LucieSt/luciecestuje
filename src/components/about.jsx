@@ -5,9 +5,11 @@ const About = () => {
   return (
     <div className="about-wrapper">
       <div className="about-banner banner">
-        {/* <h2>home</h2> */}
+        <div>
+          <h2 className='banner-headline'>O NAS</h2>
+          <p className='banner-subheadline'>LUCIE, FILIP A ZDENA</p>
+        </div>
       </div>
-      {/* <h2>about</h2> */}
     </div>
   );
 };

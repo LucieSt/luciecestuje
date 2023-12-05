@@ -28,14 +28,21 @@ const Travel = () => {
     console.log(index);
   };
 
-  const { title, year, text, images } = selectedTravelData || {};
+  const { title, year, text, images, main_image } = selectedTravelData || {};
+
+  const myStyle = { backgroundImage: `url(${main_image})` }
 
   return (
     <div className="travel">
       {selectedTravelData && (
         <>
-          <h3>{title}</h3>
-          <h4>{year}</h4>
+          <div className="travel-banner banner" style={myStyle}>
+            <div>
+              <h2 className='banner-headline'>{title}</h2>
+              <p className='banner-subheadline'>{year}</p>
+            </div>
+          </div>
+
           <p>{text}</p>
 
           <ul className="travel-container">

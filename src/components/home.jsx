@@ -13,9 +13,7 @@ const Home = () => {
 
   return (
     <div className="home-wrapper">
-      <div className="home-banner banner">
-        {/* <h2>home</h2> */}
-      </div>
+      <div className="home-banner banner"></div>
 
       <p>blabla fhbjdsjh<br />bsdjsdfh sf <br />hjksfghdfndf   fdf gfh jkfh sfj k f<br />sjh fkj  dgdgg df d gdfgsfbksfb f<br />bfsd bfsfb<br />s bfsd f</p>
       <p>blabla fhbjdsjh<br />bsdjsdfh sf <br />hjksfghdfndf   fdf gfh jkfh sfj k f<br />sjh fkj  dgdgg df d gdfgsfbksfb f<br />bfsd bfsfb<br />s bfsd f</p>
