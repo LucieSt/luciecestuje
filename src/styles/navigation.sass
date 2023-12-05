@@ -5,26 +5,24 @@
   top: 0
   width: calc(100% - 2rem)
 
+  a, span
+    color: white
+    font-weight: 500
+
 .nav-container
   display: flex
   justify-content: space-between
 
-  .nav-links
+  .nav-link
     padding-left: 2rem
-
-    a
-      vertical-align: sub
-      padding-left: 2rem
-
-    .nav-about, .nav-signout
-      padding-left: 2rem
+    vertical-align: sub
 
     .nav-signout
       cursor: pointer
-      vertical-align: sub
 
-  .nav-logo
+  .nav-logo a
     font-size: 1.5rem
+    font-weight: 400
 
 .sticky
   position: fixed
@@ -37,6 +35,10 @@
   backdrop-filter: blur(5px)
   box-shadow: rgba(81, 102, 121, 0.1) 0px 1px 0px
   ///box-shadow: 0 0 5px 10px rgba(255,255,255, 0.6)
+
+  a, span
+    color: black
+    font-weight: 400
 
 @keyframes fadeInDown
   0%

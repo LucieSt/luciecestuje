@@ -25,6 +25,7 @@ const Travels = () => {
 
   return (
     <div className="travels">
+      <div className="travels-banner banner"></div>
       <div className="travels-list">
         {signedIn && (
           <Link to="/novacesta">

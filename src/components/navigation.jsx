@@ -36,17 +36,17 @@ const Navigation = () => {
           <Link to="/">luciecestuje</Link>
         </span>
         <nav className="nav-links">
-          <Link to="/cesty" className="nav-travels">
+          <Link to="/cesty" className="nav-travels nav-link">
             CESTY
           </Link>
-          <Link to="/onas" className="nav-about">
+          <Link to="/onas" className="nav-about nav-link">
             O NAS
           </Link>
-          <Link to="/" className="nav-home">
+          <Link to="/" className="nav-home nav-link">
             DOMU
           </Link>
           {signedIn && (
-            <span className="nav-signout" onClick={handleLogout}>
+            <span className="nav-signout nav-link" onClick={handleLogout}>
               ODHLASIT
             </span>
           )}
