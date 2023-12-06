@@ -7,9 +7,11 @@
     display: flex
     flex-direction: column
     margin: auto
-    // max-width: 90vw
-    // padding: 1rem
+    padding: 10px
     gap: 10px
+
+    @media only screen and (min-width: 480px)
+      padding: 1rem 20%
 
     .travels-new
       height: 100px
@@ -19,7 +21,7 @@
     .travels-link-container
 
       .travels-img
-        height: 100vh
+        height: 30vh
         position: relative
 
         img
@@ -35,12 +37,22 @@
           top: 50%
           left: 50%
           transform: translate(-50%, -50%)
-          font-size: 60px
+          font-size: 2rem
           color: white
           text-transform: uppercase
           margin: 0
           font-weight: 400
 
+          @media only screen and (min-width: 600px)
+            font-size: 3rem
+
         &:hover
           img
             opacity: 0.8
+
+.animate-me
+  opacity: 0
+  transition: opacity 1s ease
+
+.animate-me.visible
+  opacity: 1
